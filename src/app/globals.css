@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #ffffff;
+  color: #23282d;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #fbf7f5;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #c69e65;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #c59d64;
+}
+
+.container-default {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .container-default {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.section-padding {
+  padding-top: 20px; 
+  padding-bottom: 20px;
+}
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+@layer components {
+  .premium-input {
+    width: 100%;
+    border-bottom: 1px solid #d1d5db;
+    background-color: transparent;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    color: #000000;
+    transition-property: color, border-color, background-color, text-decoration-color, fill, stroke;
+    transition-duration: 150ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .premium-input:focus {
+    outline: none;
+    border-bottom-color: #c69e65;
+  }
+
+  .premium-input::placeholder {
+    color: #9ca3af;
+  }
+}
+
+.premium-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  transition: all 300ms;
+  overflow: hidden;
+  box-shadow: 0px 2.43px 19.45px 0px rgba(0, 0, 0, 0.07);
+}
+
+.premium-card:hover {
+  box-shadow: 0px 8px 24px rgba(198, 158, 101, 0.15);
+}
+
+.premium-input {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background-color: transparent; /* semi-transparent, not solid white */
+  color: #23282D; 
+  font-size: 15px;
+}
+
+.premium-input::placeholder {
+  color: #000000;
+  opacity: 1; 
+}
+.premium-input:focus {
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.15); /* Force it to stay the original color */
+}
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-glow {
+  text-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6);
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
