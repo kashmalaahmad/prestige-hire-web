@@ -1,3 +1,5 @@
+import { Car, Compass, Users } from "lucide-react";
+
 export const navLinks = [
   { name: "Home", href: "/" },
   { name: "Fleet", href: "/fleet" },
@@ -496,7 +498,8 @@ We also arrange luxury airport transfers to complement your flight experience.`,
 
 export const weddingHireData = {
   hero: {
-    heroImage: "https://www.prestigehire.co/wp-content/uploads/2026/04/image_2020_07_15T12_25_15_960Z.png",
+    heroImage:
+      "https://www.prestigehire.co/wp-content/uploads/2026/04/image_2020_07_15T12_25_15_960Z.png",
     heroTitle: "Wedding Car Hire",
   },
   services: [
@@ -543,4 +546,45 @@ export const weddingHireData = {
       image: "https://www.prestigehire.co/wp-content/uploads/2026/04/Rectangle-11.png",
     },
   ],
+  features: [
+    {
+      icon: Car,
+      title: "Car of your choice",
+      description:
+        "We pride ourselves in our prestige range of wedding cars, we can accommodate to any requirements needed.",
+    },
+    {
+      icon: Compass,
+      title: "Range of options",
+      description:
+        "What sets us apart from other wedding car hire services is that we allow you to choose a combination of luxury cars for your special event.",
+    },
+    {
+      icon: Users,
+      title: "Safety first",
+      description:
+        "Your safety comes first, and in order to ensure this, we provide our highly trained and qualified chauffeurs who will leave you feeling safe and comfortable throughout our service.",
+    },
+  ],
+locatedIn: {
+  titlePrefix: "Located in",
+  titleHighlight: "Sydney, Prestigehire",
+  titleSuffix: "Provides The Following",
+  fleet: [
+    "Rolls Royce",
+    "Lamborghini",
+    "Maserati GranTurismo",
+    "Mercedes-Benz",
+    "Bentley Continental GT",
+    "Ferrari",
+    "Audi Q7 Limousine",
+    "Chrysler 300 Stretch Limousine",
+    "Jeep SRT Limousine",
+    "Limousine",
+  ],
+  ctaText: "See Our Fleet of Cars",
+  ctaLink: "/fleet",
+  image: "https://www.prestigehire.co/wp-content/uploads/2026/04/super-cars-30-1.jpg",
+},
+
 };

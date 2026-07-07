@@ -12,6 +12,7 @@ interface HeroProps {
   primaryButtonLink?: string;
   secondaryButtonText?: string;
   secondaryButtonLink?: string;
+  layout?: "full" | "boxed";
 }
 
 function FloatingBookingForm() {
@@ -64,6 +65,7 @@ export function Hero({
   primaryButtonLink,
   secondaryButtonText,
   secondaryButtonLink,
+  layout = "full",
 }: HeroProps) {
   const isDefaultHero =
     backgroundImage === undefined &&
@@ -73,6 +75,7 @@ export function Hero({
     primaryButtonLink === undefined &&
     secondaryButtonText === undefined &&
     secondaryButtonLink === undefined;
+    const isBoxed = layout === "boxed";
 
   const heroBackgroundImage = backgroundImage ?? "https://www.prestigehire.co/wp-content/uploads/2026/04/image-16-3.png";
   const heroSubtitle = isDefaultHero ? "Arrive. Impress. Celebrate." : subtitle;
@@ -84,9 +87,9 @@ export function Hero({
   if (isDefaultHero) {
     return (
       <>
-        <section className="relative min-h-[400px] md:min-h-[700px] w-full flex flex-col justify-start overflow-visible">
+        <section className={`relative min-h-[400px] md:min-h-[700px] w-full flex flex-col justify-start overflow-visible ${isBoxed ? "max-w-6xl mx-auto rounded-2xl mt-8" : ""}`}>
           <div className="absolute inset-0 z-0">
-            <Image src={heroBackgroundImage} alt="Hero background" fill className="object-cover" priority />
+            <Image src={heroBackgroundImage} alt="Hero background" fill  className={`object-cover ${isBoxed ? "rounded-2xl" : ""}`} priority />
           </div>
 
           <div className="relative z-10 px-4 max-w-[1540px] mx-auto flex flex-col pt-[30px] w-full items-center">
@@ -126,10 +129,13 @@ export function Hero({
 
   return (
     <>
-      <section className="relative min-h-[400px] md:min-h-[700px] w-full flex flex-col justify-start overflow-visible">
+      <section className={`relative h-[500px] w-full flex flex-col justify-center overflow-hidden ${
+  isBoxed ? "max-w-6xl mx-auto rounded-2xl my-8" : ""
+}`}>
         <div className="absolute inset-0 z-0">
-          <Image src={heroBackgroundImage} alt="Hero background" fill className="object-cover" priority />
-        </div>
+  <Image src={heroBackgroundImage} alt="Hero background" fill className="object-cover" priority />
+  <div className="absolute inset-0 bg-black/20" />
+</div>
 
         <div className="relative z-10 min-h-[400px] md:min-h-[700px] px-4 max-w-[1540px] mx-auto flex flex-col items-center justify-center text-center w-full gap-4">
           <div className="text-center flex items-center justify-center">
