@@ -6,7 +6,6 @@ interface AboutSectionProps {
     text: string;
     image: string;
   };
-  // We add an optional items array to support your new card layout
   items?: Array<{ image: string; name: string; text: string }>;
   maxWidth?: string;
 }

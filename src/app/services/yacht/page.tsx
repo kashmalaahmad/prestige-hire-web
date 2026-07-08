@@ -4,7 +4,7 @@ import {ContactForm} from "@/components/sections/ContactForm";
 import {FaqSection} from "@/components/sections/FaqSection";
 import AboutSection from "@/components/services/AboutSection";
 import { FeatureGrid } from "@/components/services/FeatureGrid";
-import { WhyChoose } from "@/components/services/WhyChoose";
+import { WhyChoose } from "@/components/services/ContentBlock";
 import { BookingSection } from "@/components/services/BookingSection"; 
 import { YachtIcon } from "@/components/icons/YachtIcon";
 import Image from "next/image";
@@ -13,7 +13,7 @@ import Link from "next/link";
 export default function YachtPage() {
   const { hero } = yacht;
   const fleetItems = (yacht.fleet || []).map((vessel) => ({
-  image: vessel.image,
+  image: vessel.image || "/path/to/default-image.jpg",
   heading: vessel.name,
   paragraphs: [vessel.text],
   buttonText: "View detail",

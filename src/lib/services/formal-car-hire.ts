@@ -1,6 +1,25 @@
 import type { ServiceData } from "@/lib/types/service";
 
-export const formalCarHire: ServiceData = {
+export interface FormalCarServiceData extends ServiceData {
+  ctaSection: {
+    title: string;
+    paragraphs: string[];
+    buttonText: string;
+    buttonLink: string;
+    image: string;
+  };
+  fleetHeading: { highlight: string; rest: string };
+  fleetSubheading: string;
+  typesSection: {
+    title: { highlight: string; rest: string };
+    description: string;
+    items: string[];
+    footerText: string;
+    image: string;
+  };
+}
+
+export const formalCarHire: FormalCarServiceData = {
   layout: [
     "hero",
     "about",
@@ -17,7 +36,7 @@ export const formalCarHire: ServiceData = {
     heroTitle: "Formal Car Hire Sydney",
   },
   about: {
-    heading: { highlight: "Private Jet Hire",rest: "in Sydney" },
+    heading: { highlight: "Formal Car Hire", rest: "Luxury" },
     text: "Your school formal deserves more than just a ride. At Prestige Hire, we make every arrival memorable with our range of luxury cars and professional chauffeurs. From your doorstep to the red carpet, we bring style, comfort, and confidence to your night. Whether it is a school formal or a Year 12 celebration, our formal car hire in Sydney adds that special touch that makes the evening unforgettable. Every ride is planned with care from home pickup and photo stops to your final drop-off. Simply choose your preferred car, confirm your pickup time, and leave the rest to us. We handle everything smoothly so you can enjoy every moment without worrying about timing, parking, or coordination.",
     image: "https://www.prestigehire.co/wp-content/uploads/2026/04/Untitled-design-59-1.png",
   },
@@ -29,14 +48,10 @@ export const formalCarHire: ServiceData = {
     { name: "Mercedes-Benz AMG", text: "Rent Price: $720/day", logo: "https://www.prestigehire.co/wp-content/uploads/2026/04/image-42-3-1.png", carImage: "https://www.prestigehire.co/wp-content/uploads/2026/04/image-36-1-1.png" },
     { name: "Maserati GranTurismo", text: "Rent Price: $720/day", logo: "https://tse1.mm.bing.net/th/id/OIP.oRi7jfpl8FPiLzYIb5XUtAHaEY?pid=Api&h=220&P=0", carImage: "https://www.prestigehire.co/wp-content/uploads/2026/04/image-31-1.png" },
   ],
-  fleetHeading:{highlight: "Private Jets", 
-  rest: "Our Fleet of"},
+  fleetHeading: { highlight: "Car Fleet", rest: "Our Formal" },
   fleetSubheading: "Turn heads with our luxury cars designed to make your formal night unforgettable:",
   typesSection: {
-    title: {
-    rest: "Types of",
-    highlight: "Private Jet Charter Sydney",
-  },
+    title: { highlight: "Formal Car", rest: "Services" },
     description: "A school formal is a night to remember, and your arrival sets the tone. Our school formal car hire lets you travel like a star without worrying about traffic or parking.",
     items: [
       "Luxury cars to match your outfit and theme",
@@ -47,8 +62,8 @@ export const formalCarHire: ServiceData = {
     image: "https://www.prestigehire.co/wp-content/uploads/2026/04/new-gallery4.png",
   },
   bookingSection: {
-    title: "How Booking Works",
-    subtitle: "Booking your private plane hire with Prestige Hire is quick and simple:",
+    title: { highlight: "Yacht for Hire in Sydney", rest: "How to Book a "},
+    subtitle: "Booking your formal car hire with Prestige Hire is quick and simple:",
     steps: [
       "Choose Your Car – Explore our luxury fleet and pick the one that suits your vibe.",
       "Book Easily – Secure your date online or call us directly.",
@@ -86,6 +101,6 @@ export const formalCarHire: ServiceData = {
   },
   faqSection: {
     title: "Frequently Asked Questions",
-    description: "Still have questions? Find ansers to our most commonly asked questions.",
+    description: "Still have questions? Find answers to our most commonly asked questions.",
   },
 };

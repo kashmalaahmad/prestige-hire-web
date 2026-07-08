@@ -7,6 +7,7 @@ import { ContactForm } from "@/components/sections/ContactForm";
 import { ServicesGrid } from "@/components/sections/ServicesGrid";
 import { FaqSection } from "@/components/sections/FaqSection";
 import { weddingHireData } from "@/lib/data";
+import { fleetData } from "@/lib/data";
 import Image from "next/image";
 import Link from "next/link";
 import { Car } from "lucide-react";
@@ -38,7 +39,12 @@ export default function WeddingHirePage() {
         secondaryButtonLink="/fleet"
       />
 
-      <FleetGrid />
+     <FleetGrid 
+      data={fleetData} 
+      heading={{ highlight: "Premium Fleet", rest: "Our" }} 
+      subheading="Ideal for weddings, events and VIP transport across Sydney."
+      showPrice={false} 
+    />
 
       <section className="py-8 md:py-12 px-4 bg-white overflow-hidden">
         <div className="max-w-[1140px] mx-auto flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-4">

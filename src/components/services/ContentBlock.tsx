@@ -16,7 +16,6 @@ export function WhyChoose({ data, maxWidth = "max-w-7xl" }: WhyChooseProps) {
     <section className="bg-white py-10 md:py-16 px-4">
       <div className={`${maxWidth} mx-auto grid md:grid-cols-2 gap-8 md:gap-12 items-start`}>
         
-        {/* Dynamic Vertical Image Stack */}
         <div className="flex flex-col gap-6">
           {data.images.map((img, i) => (
             <div key={i} className="relative w-full overflow-hidden rounded-lg shadow-md">
@@ -31,21 +30,20 @@ export function WhyChoose({ data, maxWidth = "max-w-7xl" }: WhyChooseProps) {
           ))}
         </div>
 
-        {/* Content Section */}
         <div>
           <h2
-            className="font-bold mb-6 text-black text-[32px] sm:text-[40px] md:text-[50px]"
+            className="font-bold mb-6 text-black text-[32px] sm:text-[40px] md:text-[55px]"
             style={{ fontFamily: '"Playfair Display", serif', lineHeight: "1.1" }}
           >
             {data.title}
           </h2>
           
-          <div className="font-poppins text-[16px] text-black space-y-4">
+          <div className=" text-[16px] text-black space-y-4" style={{ fontFamily: 'Inter, sans-serif'}}>
             {(data.paragraphs || []).map((p, i) => (
               <p key={i}>{p}</p>
             ))}
             
-            <ul className="list-disc pl-5 space-y-2">
+            <ul className="list-disc pl-5 space-y-1">
               {data.bullets.map((b, i) => (
                 <li key={i}>{b}</li>
               ))}

@@ -11,7 +11,7 @@ import { PlaneIcon } from "@/components/icons/Planeicon";
 import { ContactForm } from "@/components/sections/ContactForm";
 import { FaqSection } from "@/components/sections/FaqSection";
 import AboutSection from "@/components/services/AboutSection";
-import { WhyChoose } from "@/components/services/WhyChoose";
+import { WhyChoose } from "@/components/services/ContentBlock";
 
 export default function PrivateJetPage() {
   const data = privateJet;

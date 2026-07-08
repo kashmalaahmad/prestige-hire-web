@@ -5,6 +5,7 @@ export type SectionKey =
   | "fleet" 
   | "bookingSection" 
   | "formSection";
+    "faqSection";
 
 export interface ServiceData {
   layout: string[]; // Keep as string[] for flexibility or use SectionKey[]
@@ -25,7 +26,13 @@ export interface ServiceData {
     closing: string;
     images: string[];
   };
-  fleet?: Array<{ name: string; text: string; image: string }>;
+  fleet?: Array<{ 
+    name: string; 
+    text: string; 
+    image?: string; 
+    logo?: string; 
+    carImage?: string; 
+  }>;
   bookingSection?: { 
     title: { highlight: string; rest: string }; 
     subtitle: string; 
@@ -33,4 +40,8 @@ export interface ServiceData {
     footerText: string 
   };
   formSection?: { title: string; subtitle: string };
+  faqSection?: {
+    title: string;
+    description: string;
+  },
 }
