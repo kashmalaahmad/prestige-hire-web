@@ -34,7 +34,7 @@ export function ContactForm({
             {title}
           </h2>
           {subtitle && (
-            <p className="text-[16px] sm:text-[16px] text-black/80 mt-3 max-w-2xl mx-auto">
+            <p className="text-[16px] sm:text-[16px] text-black/80 mt-3 max-w-2xl mx-auto" style={{ fontFamily: 'Poppins, sans-serif' }}>
               {subtitle}
             </p>
           )}

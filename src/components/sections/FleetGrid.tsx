@@ -18,7 +18,7 @@ function FleetCard({ item }: { item: (typeof fleetData)[number] }) {
       <div className="absolute top-0 left-0 p-4 sm:p-6 flex flex-col items-start text-left">
         <div className="relative w-[32px] h-[32px] sm:w-[42px] sm:h-[42px] mb-2 sm:mb-3">
           <Image src={item.logo} alt="Brand Logo" fill className="object-contain" />
-        </div>
+        </div>                                                                    
         <h3
           className="text-white text-[16px] sm:text-[19px] md:text-[22px] font-semibold tracking-wide font-serif leading-tight"
           style={{ textShadow: "0px 2px 6px rgba(0,0,0,0.8)" }}
