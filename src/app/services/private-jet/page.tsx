@@ -10,6 +10,8 @@ import { BookingSection } from "@/components/services/BookingSection";
 import { PlaneIcon } from "@/components/icons/Planeicon";
 import { ContactForm } from "@/components/sections/ContactForm";
 import { FaqSection } from "@/components/sections/FaqSection";
+import AboutSection from "@/components/services/AboutSection";
+import { WhyChoose } from "@/components/services/WhyChoose";
 
 export default function PrivateJetPage() {
   const data = privateJet;
@@ -36,64 +38,10 @@ export default function PrivateJetPage() {
         secondaryButtonLink="#fleet"
       />
 
-      <section className="max-w-7xl mx-auto py-10 md:py-16 grid md:grid-cols-2 gap-8 md:gap-12 px-4">
-        <div>
-          <h1
-            className="text-black font-bold text-[32px] sm:text-[40px] md:text-[55px]"
-            style={{ fontFamily: '"Playfair Display", sans-serif' }}
-          >
-            <span className="text-[#C69E65]">{data.about.heading.highlight}</span>{" "}
-            {data.about.heading.rest}
-          </h1>
-          <p style={{ fontFamily: "Poppins, sans-serif", fontSize: "16px" }}>
-            {data.about.text}
-          </p>
-        </div>
-        <Image
-          src={data.about.image}
-          width={588}
-          height={401}
-          alt="About"
-          className="w-full h-auto object-cover rounded-lg"
-        />
-      </section>
+      <AboutSection data={privateJet.about} maxWidth="max-w-7xl" />
+      <WhyChoose data={privateJet.whyChoose} />
 
-      <section className="bg-white py-10 md:py-16 px-4">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 md:gap-12 items-start">
-          <div className="flex flex-col gap-6">
-            {data.whyChoose.images.map((img, i) => (
-              <Image
-                key={i}
-                src={img}
-                width={588}
-                height={401}
-                alt="Why Choose"
-                className="w-full h-auto rounded-lg shadow-md object-cover"
-              />
-            ))}
-          </div>
-
-          <div>
-            <h2
-              className="font-bold mb-6 text-black text-[32px] sm:text-[40px] md:text-[55px]"
-              style={{ fontFamily: '"Playfair Display", serif', lineHeight: "1.1" }}
-            >
-              {data.whyChoose.title}
-            </h2>
-            <div className="font-poppins text-[16px] text-gray-700 space-y-4">
-              {(data.whyChoose.paragraphs || []).map((p, i) => (
-                <p key={i}>{p}</p>
-              ))}
-              <ul className="list-disc pl-5 space-y-2">
-                {(data.whyChoose.bullets || []).map((b, i) => (
-                  <li key={i}>{b}</li>
-                ))}
-              </ul>
-              <p>{data.whyChoose.closing}</p>
-            </div>
-          </div>
-        </div>
-      </section>
+  
 
       <section id="fleet" className="py-12 md:py-20 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
@@ -158,9 +106,9 @@ export default function PrivateJetPage() {
                 style={{ fontFamily: "Poppins, sans-serif", fontSize: "16px" }}
               >
                 <p>{typesSection.description}</p>
-                <ul className="list-disc pl-5 space-y-3">
+                <ul className="list-disc pl-5 space-y-1 mt-4 mb-4">
                   {typesSection.items.map((item, i) => (
-                    <li key={i}>{item}</li>
+                    <li key={i} className="leading-6">{item}</li>
                   ))}
                 </ul>
                 <p className="mt-4 font-medium">{typesSection.footerText}</p>
@@ -308,7 +256,7 @@ export default function PrivateJetPage() {
 
       {data.ctaSection && (
         <section className="bg-white py-12 md:py-20 px-4">
-          <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             <div className="space-y-6">
               <h2
                 className="text-[26px] sm:text-[30px] md:text-[35px] font-bold text-black leading-tight"

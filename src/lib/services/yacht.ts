@@ -1,6 +1,25 @@
 import type { ServiceData } from "@/lib/types/service";
 
-export const yacht: ServiceData = {
+export interface YachtServiceData extends ServiceData {
+  fleetHeading: { highlight: string; rest: string };
+  fleetSubheading: string;
+  faqSection: {
+    title: string;
+    description: string;
+  };
+  occasionsSection: {
+    title: { highlight: string; rest: string };
+    cards: Array<{
+      image: string;
+      heading: string;
+      paragraphs: string[];
+      buttonText: string;
+      buttonLink: string;
+    }>;
+  };
+}
+
+export const yacht: YachtServiceData = {
   layout: [
     "hero",
     "about",
@@ -18,7 +37,7 @@ export const yacht: ServiceData = {
     heroLayout: "boxed",
   },
   about: {
-    title: "Premium Yacht Hire Services in Sydney",
+    heading: { highlight: "Premium Yacht Hire", rest: "Services in Sydney" },
     text: "Prestige Hire offers premium yacht for hire in Sydney for private events, corporate gatherings and unforgettable experiences. Whether you are planning a fun cruise or a fancy event on the water, our yachts offer comfort, privacy, and style.\n\nOur services are designed for couples, families, corporate groups and event hosts who want more than a standard boat hire option. With experienced crew and fully equipped vessels, including a private boat, you enjoy a smooth and stress-free luxury boating experience on Sydney Harbour with friendly staff.\n\nHiring a yacht with Prestige Hire gives you complete freedom. You can customize your trip for sightseeing or celebrations. Enjoy the famous views of the boat on Sydney Harbour.",
     image: "https://www.prestigehire.co/wp-content/uploads/2026/04/boathire-img.jpg",
   },
@@ -59,22 +78,11 @@ export const yacht: ServiceData = {
       image: "https://www.prestigehire.co/wp-content/uploads/2026/04/50ft-yacht1.jpg",
     },
   ],
-  fleetHeading: "Our Luxury Yacht Fleet",
+  fleetHeading: { highlight: "Yacht Fleet", rest: "Our Luxury " },
   fleetSubheading: "Prestige Hire offers a carefully selected fleet to suit different group sizes and event styles. Professional teams maintain each yacht and fully crew them for your comfort and safety, ensuring unforgettable experiences.Available vessels include:",
-  typesSection: {
-    title: "Yacht Hire for Every Occasion",
-    description: "",
-    items: [
-      "Birthday Parties & Private Celebrations: Planning a birthday party on the water? Our yacht hire for birthday party in Sydney is perfect for intimate gatherings or lively celebrations. Enjoy music, catering options and stunning harbour views while our friendly staff manages everything onboard.",
-      "Corporate Events & Business Functions: For meetings, client entertainment or networking events, our private yacht charter provides a professional and impressive setting. Many businesses pick Prestige Hire for boat hire in Sydney. Our reliable service and high-quality boats for corporate events earn us a strong reputation.",
-      "Harbour Cruises & Sightseeing: Experience a relaxing boat cruise on Sydney Harbour with friends or family. Our guided harbour tour on a private yacht lets you see the Opera House, Harbour Bridge, and waterfront suburbs. Enjoy this experience in comfort and privacy.",
-      "Special Events & On-Water Venues: From engagements to private events, our yachts serve as a unique on-water event venue. A chartered private boat with crew allows you to focus on your guests while we handle navigation and safety.",
-    ],
-    footerText: "",
-    image: "https://www.prestigehire.co/wp-content/uploads/2026/04/103ft-yacht1.jpg",
-  },
+
   bookingSection: {
-    title: "How to Book a Yacht for Hire in Sydney",
+    title: { highlight: "Yacht for Hire in Sydney", rest: "How to Book a "},
     subtitle: "Simple Booking Process",
     steps: [
       "Choose your preferred yacht",
@@ -84,16 +92,6 @@ export const yacht: ServiceData = {
     ],
     footerText: "Our team is available to guide you through every step, making boat hire in Sydney simple and stress-free with friendly staff.",
   },
-  ctaSection: {
-    title: "Sydney Harbour Yacht Hire Experience",
-    paragraphs: [
-      "Sydney Harbour is one of the world’s most iconic waterways. Our yacht hire services in Sydney Harbour let you enjoy the area at your own pace. You can avoid crowded public transport and regular cruises.",
-      "From short harbour tours to extended charters, our yachts offer privacy, comfort and uninterrupted views. This is a great choice for people looking for a classy alternative to land venues. Enjoy unforgettable experiences on a private boat.",
-    ],
-    buttonText: "Book Your Ride",
-    buttonLink: "#",
-    image: "https://www.prestigehire.co/wp-content/uploads/2026/04/86ft-yacht2.jpg",
-  },
   formSection: {
     title: "How to Book a Yacht for Hire in Sydney",
     subtitle: "Experience the finest chauffeur service Sydney has to offer. Book your journey today and discover the PrestigeHire difference.",
@@ -102,10 +100,49 @@ export const yacht: ServiceData = {
     title: "Frequently Asked Questions",
     description: "Still have questions? Find ansers to our most commonly asked questions.",
   },
-  routesSection: {
-    title: "Sydney Harbour Yacht Hire Experience",
-    description: "Sydney Harbour is one of the world’s most iconic waterways. Our yacht hire services in Sydney Harbour let you enjoy the area at your own pace. You can avoid crowded public transport and regular cruises.\n\nFrom short harbour tours to extended charters, our yachts offer privacy, comfort and uninterrupted views. This is a great choice for people looking for a classy alternative to land venues. Enjoy unforgettable experiences on a private boat.",
-    mainImage: "https://www.prestigehire.co/wp-content/uploads/2026/04/86ft-yacht2.jpg",
-    galleryImages: [],
+  occasionsSection: {
+    title: { highlight: "Yacht Hire", rest: "for Every Occasion" },
+    cards: [
+      {
+        image: "https://www.prestigehire.co/wp-content/uploads/2026/04/103ft-yacht1.jpg",
+        heading: "Birthday Parties & Private Celebrations",
+        paragraphs: [
+          "Planning a birthday party on the water? Our yacht hire for birthday party in Sydney is perfect for intimate gatherings or lively celebrations. Enjoy music, catering options and stunning harbour views while our friendly staff manages everything onboard.",
+          "Planning a wedding in Sydney? Complete your day with our luxury wedding car hire services.",
+        ],
+        buttonText: "View detail",
+        buttonLink: "/services/yacht/details",
+      },
+      {
+        image: "https://www.prestigehire.co/wp-content/uploads/2026/04/103ft-yacht2.jpg",
+        heading: "Corporate Events & Business Functions",
+        paragraphs: [
+          "For meetings, client entertainment or networking events, our private yacht charter provides a professional and impressive setting. Many businesses pick Prestige Hire for boat hire in Sydney. Our reliable service and high-quality boats for corporate events earn us a strong reputation.",
+          "Prefer a relaxed, chauffeur-driven journey before or after your cruise? Our chauffeur service in Sydney is available on demand.",
+        ],
+        buttonText: "View detail",
+        buttonLink: "/services/yacht/details",
+      },
+      {
+        image: "https://www.prestigehire.co/wp-content/uploads/2026/04/103ft-yacht3.jpg",
+        heading: "Harbour Cruises & Sightseeing",
+        paragraphs: [
+          "Experience a relaxing boat cruise on Sydney Harbour with friends or family. Our guided harbour tour on a private yacht lets you see the Opera House, Harbour Bridge, and waterfront suburbs. Enjoy this experience in comfort and privacy.",
+          "Travelling to or from the harbour or airport? Book our Sydney Airport transfer service for smooth connections.",
+        ],
+        buttonText: "View detail",
+        buttonLink: "/services/yacht/details",
+      },
+      {
+        image: "https://www.prestigehire.co/wp-content/uploads/2026/04/86ft-yacht3.jpg",
+        heading: "Special Events & On-Water Venues",
+        paragraphs: [
+          "From engagements to private events, our yachts serve as a unique on-water event venue. A chartered private boat with crew allows you to focus on your guests while we handle navigation and safety.",
+          "Organising a formal event or school formal? Explore our formal car hire options for a stylish arrival..",
+        ],
+        buttonText: "View detail",
+        buttonLink: "/services/yacht/details",
+      },
+    ],
   },
 };

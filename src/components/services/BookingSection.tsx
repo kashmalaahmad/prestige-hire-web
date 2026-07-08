@@ -6,7 +6,8 @@ interface BookingStep {
 }
 
 interface BookingSectionProps {
-  title: string;
+  title: { highlight: string; rest: string };
+  highlightPosition?: "before" | "after";
   subtitle: string;
   steps: BookingStep[];
   footerText?: string;
@@ -16,15 +17,13 @@ interface BookingSectionProps {
 
 export const BookingSection = ({ 
   title, 
+  highlightPosition = "after",
   subtitle, 
   steps, 
   footerText, 
   buttons, 
   className = "" 
 }: BookingSectionProps) => {
-  const words = title.split(" ");
-  const rest = words.slice(0, -2).join(" ");
-  const highlight = words.slice(-2).join(" ");
 
    return (
     <section className={`bg-[#F5F5F5] py-[30px] px-4 ${className}`}>
@@ -33,10 +32,18 @@ export const BookingSection = ({
           className="text-4xl md:text-5xl font-bold mb-2 text-black text-center"
           style={{ fontFamily: '"Playfair Display", serif' }}
         >
-          {rest} <span className="text-[#C69E65]">{highlight}</span>
+          {highlightPosition === "before" ? (
+          <>
+            <span className="text-[#C69E65]">{title.highlight}</span> {title.rest}
+          </>
+        ) : (
+          <>
+            {title.rest} <span className="text-[#C69E65]">{title.highlight}</span>
+          </>
+        )}
         </h2>
 
-        <p className="mb-4 text-gray-800 text-center font-poppins">
+        <p className="mb-4 text-[16px] text-black text-center " style={{ fontFamily: 'Poppins, sans-serif' }}>
           {subtitle}
         </p>
 
@@ -44,7 +51,7 @@ export const BookingSection = ({
           {steps.map((step, i) => (
             <div key={i} className="flex items-center gap-2">
               <span className="flex-shrink-0">{step.icon}</span>
-              <p className="text-[15px] text-gray-800 font-poppins">
+              <p className="text-[15px] text-gray-500 " style={{ fontFamily: ', sans-serif' }}>
                 {step.text}
               </p>
             </div>
@@ -52,7 +59,7 @@ export const BookingSection = ({
         </div>
 
         {footerText && (
-          <p className="text-gray-900 text-[16px] mb-0 font-poppins text-center">
+          <p className="mb-4 text-[16px] text-black text-center " style={{ fontFamily: 'Poppins, sans-serif' }}>
             {footerText}
           </p>
         )}

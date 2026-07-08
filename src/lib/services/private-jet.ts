@@ -1,24 +1,49 @@
-// src/lib/services/private-jet.ts
 import type { ServiceData } from "@/lib/types/service";
 
-export const privateJet: ServiceData = {
+export const privateJet: ServiceData & {
+  fleetHeading: { highlight: string; rest: string };
+  fleetSubheading: string;
+  typesSection: {
+    title: { rest: string; highlight: string };
+    description: string;
+    items: string[];
+    footerText: string;
+    image: string;
+  };
+  routesSection: {
+    title: { rest: string; highlight: string };
+    description: string;
+    routes: string[];
+    footerText: string;
+    mainImage: string;
+    galleryImages: string[];
+  };
+  ctaSection: {
+    title: string;
+    paragraphs: string[];
+    buttonText: string;
+    buttonLink: string;
+    image: string;
+  };
+  featuresSection: {
+    title: string;
+    description: string;
+    items: string[];
+    footerText: string;
+    mainImage: string;
+    galleryImages: string[];
+  };
+} = {
   layout: [
-    "about",
-    "whyChoose",
-    "fleet",
-    "typesSection",
-    "bookingSection",
-    "routesSection",
-    "ctaSection",
-    "featuresSection",
-    "formSection",
+    "about", "whyChoose", "fleet", "typesSection", "bookingSection", 
+    "routesSection", "ctaSection", "featuresSection", "formSection"
   ],
   hero: {
     heroImage: "https://www.prestigehire.co/wp-content/uploads/2026/04/jethire-luxury-Jet.jpg",
     heroTitle: "Private Jet Hire",
   },
   about: {
-    heading: { highlight: "Private Jet Hire",rest: "in Sydney" },
+    heading: { highlight: "Private Jet Hire", rest: "in Sydney" },
     text: "Flying across Australia or internationally is easier and more comfortable with Prestige Hire. Our private jet hire service gives you the flexibility to set your own departure times and destinations. Whether for business or leisure, our private jet charter offers speed, privacy, and convenience. For clients seeking the finest travel experience on the ground as well, Prestige Hire also provides luxury cars in Sydney with professional chauffeur services.",
     image: "https://www.prestigehire.co/wp-content/uploads/2026/04/gulfstream-giv1.jpg",
   },
@@ -34,37 +59,21 @@ export const privateJet: ServiceData = {
       "Luxury cabins for privacy and comfort",
       "An experienced crew with years of aviation expertise",
     ],
-    closing:
-      "Our private aircraft hire is ideal for executives, corporate teams, and travellers who value comfort and style. From short city-to-city flights to long international journeys, we make every trip smooth and enjoyable. We also arrange luxury airport transfers to complement your flight experience.",
+    closing: "Our private aircraft hire is ideal for executives, corporate teams, and travellers who value comfort and style. From short city-to-city flights to long international journeys, we make every trip smooth and enjoyable. We also arrange luxury airport transfers to complement your flight experience.",
     images: [
       "https://www.prestigehire.co/wp-content/uploads/2026/04/gulfstream-giv2.jpg",
       "https://www.prestigehire.co/wp-content/uploads/2026/04/gulfstream-giv3.jpg",
     ],
   },
   fleet: [
-    {
-      name: "Gulfstream GIV Luxury Jet",
-      text: "The Gulfstream GIV offers long transcontinental range, flown by two professional pilots and a flight attendant. The newly refurbished cabin features 10 reclining leather seats, a four-seat lounge, and fold-out business tables. With capacity for up to 14 passengers, it’s a top choice for corporate jet hire and extended travel.",
-      image: "https://www.prestigehire.co/wp-content/uploads/2026/04/larjet-3.jpg",
-    },
-    {
-      name: "Learjet 31 Luxury Jet",
-      text: "Compact, efficient, and fast, the Learjet 31 is a favourite for shorter interstate flights. Its Delta-Fins and Ski-Locker features deliver both stability and performance. This aircraft is often chosen for business jet hire and private jet charter flights across Australia.",
-      image: "https://www.prestigehire.co/wp-content/uploads/2026/04/larjet-1.jpg",
-    },
-    {
-      name: "Falcon 900 Luxury Jet",
-      text: "With a range exceeding 5,000 miles, the Falcon 900 is ideal for international routes. Its three-engine configuration enhances safety and flexibility. A spacious interior makes it one of the most popular private jets for long-haul travel.",
-      image: "https://www.prestigehire.co/wp-content/uploads/2026/04/falcon-1.jpg",
-    },
+    { name: "Gulfstream GIV Luxury Jet", text: "The Gulfstream GIV offers long transcontinental range, flown by two professional pilots and a flight attendant. The newly refurbished cabin features 10 reclining leather seats, a four-seat lounge, and fold-out business tables. With capacity for up to 14 passengers, it’s a top choice for corporate jet hire and extended travel.", image: "https://www.prestigehire.co/wp-content/uploads/2026/04/larjet-3.jpg" },
+    { name: "Learjet 31 Luxury Jet", text: "Compact, efficient, and fast, the Learjet 31 is a favourite for shorter interstate flights. Its Delta-Fins and Ski-Locker features deliver both stability and performance. This aircraft is often chosen for business jet hire and private jet charter flights across Australia.", image: "https://www.prestigehire.co/wp-content/uploads/2026/04/larjet-1.jpg" },
+    { name: "Falcon 900 Luxury Jet", text: "With a range exceeding 5,000 miles, the Falcon 900 is ideal for international routes. Its three-engine configuration enhances safety and flexibility. A spacious interior makes it one of the most popular private jets for long-haul travel.", image: "https://www.prestigehire.co/wp-content/uploads/2026/04/falcon-1.jpg" },
   ],
-  fleetHeading: "Our Fleet Private Jets",
+  fleetHeading: { highlight: "Private Jets", rest: "Our Fleet of" },
   fleetSubheading: "Prestige Hire operates a selection of respected aircraft trusted worldwide.",
   typesSection: {
-    title: {
-    rest: "Types of",
-    highlight: "Private Jet Charter Sydney",
-  },
+    title: { rest: "Types of", highlight: "Private Jet Charter Sydney" },
     description: "Prestige Hire provides a variety of private jet options to match every travel need:",
     items: [
       "Business Jet Charter – Perfect for executives and corporate teams needing punctual and discreet travel.",
@@ -76,7 +85,7 @@ export const privateJet: ServiceData = {
     image: "https://www.prestigehire.co/wp-content/uploads/2026/04/falcon-4-1.jpg",
   },
   bookingSection: {
-    title: "How to Book a Private Jet",
+     title: { highlight: "Private Jet", rest: "How to Book a "},
     subtitle: "Booking your private plane hire with Prestige Hire is quick and simple:",
     steps: [
       "Choose your preferred aircraft from our fleet of private jets for hire.",
@@ -87,10 +96,7 @@ export const privateJet: ServiceData = {
     footerText: "Our team can also arrange formal car in Sydney for ground transport, ensuring a premium experience from home to the hangar.",
   },
   routesSection: {
-    title: {
-    rest: "Popular Routes from",
-    highlight: "Sydney",
-  },
+    title: { rest: "Popular Routes from", highlight: "Sydney" },
     description: "Prestige Hire operates across Australia and beyond. Some of our most popular charter routes include:",
     routes: [
       "Sydney to Melbourne – A top choice for business and executive travel.",

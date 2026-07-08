@@ -17,52 +17,26 @@ export const formalCarHire: ServiceData = {
     heroTitle: "Formal Car Hire Sydney",
   },
   about: {
-    title: "Luxury Formal Car Hire in Sydney",
+    heading: { highlight: "Private Jet Hire",rest: "in Sydney" },
     text: "Your school formal deserves more than just a ride. At Prestige Hire, we make every arrival memorable with our range of luxury cars and professional chauffeurs. From your doorstep to the red carpet, we bring style, comfort, and confidence to your night. Whether it is a school formal or a Year 12 celebration, our formal car hire in Sydney adds that special touch that makes the evening unforgettable. Every ride is planned with care from home pickup and photo stops to your final drop-off. Simply choose your preferred car, confirm your pickup time, and leave the rest to us. We handle everything smoothly so you can enjoy every moment without worrying about timing, parking, or coordination.",
     image: "https://www.prestigehire.co/wp-content/uploads/2026/04/Untitled-design-59-1.png",
   },
   fleet: [
-    { 
-      name: "Rolls Royce Dawn", 
-      text: "Rent Price: $720/day",
-      logo: "https://www.prestigehire.co/wp-content/uploads/2026/04/image-70-1.png",
-      carImage: "https://www.prestigehire.co/wp-content/uploads/2026/04/image-19-1.png" 
-    },
-    { 
-      name: "Rolls Royce Phantom", 
-      text: "Rent Price: $720/day",
-      logo: "https://www.prestigehire.co/wp-content/uploads/2026/04/image-70-1.png",
-      carImage: "https://www.prestigehire.co/wp-content/uploads/2026/04/image-19-1.png" 
-    },
-    { 
-      name: "Lamborghini Huracan", 
-      text: "Rent Price: $720/day",
-      logo: "https://www.prestigehire.co/wp-content/uploads/2026/04/image-26-1.png",
-      carImage: "https://www.prestigehire.co/wp-content/uploads/2026/04/image-28-1.png" 
-    },
-    { 
-      name: "Bentley Continental GT", 
-      text: "Rent Price: $720/day",
-      logo: "https://www.prestigehire.co/wp-content/uploads/2026/04/image-42-3-1.png",
-      carImage: "https://www.prestigehire.co/wp-content/uploads/2026/04/image-38-1.png" 
-    },
-    { 
-      name: "Mercedes-Benz AMG", 
-      text: "Rent Price: $720/day",
-      logo: "https://www.prestigehire.co/wp-content/uploads/2026/04/image-42-3-1.png",
-      carImage: "https://www.prestigehire.co/wp-content/uploads/2026/04/image-36-1-1.png" 
-    },
-    { 
-      name: "Maserati GranTurismo", 
-      text: "Rent Price: $720/day",
-      logo: "https://tse1.mm.bing.net/th/id/OIP.oRi7jfpl8FPiLzYIb5XUtAHaEY?pid=Api&h=220&P=0",
-      carImage: "https://www.prestigehire.co/wp-content/uploads/2026/04/image-31-1.png" 
-    },
+    { name: "Rolls Royce Dawn", text: "Rent Price: $720/day", logo: "https://www.prestigehire.co/wp-content/uploads/2026/04/image-70-1.png", carImage: "https://www.prestigehire.co/wp-content/uploads/2026/04/image-19-1.png" },
+    { name: "Rolls Royce Phantom", text: "Rent Price: $720/day", logo: "https://www.prestigehire.co/wp-content/uploads/2026/04/image-70-1.png", carImage: "https://www.prestigehire.co/wp-content/uploads/2026/04/image-19-1.png" },
+    { name: "Lamborghini Huracan", text: "Rent Price: $720/day", logo: "https://www.prestigehire.co/wp-content/uploads/2026/04/image-26-1.png", carImage: "https://www.prestigehire.co/wp-content/uploads/2026/04/image-28-1.png" },
+    { name: "Bentley Continental GT", text: "Rent Price: $720/day", logo: "https://www.prestigehire.co/wp-content/uploads/2026/04/image-42-3-1.png", carImage: "https://www.prestigehire.co/wp-content/uploads/2026/04/image-38-1.png" },
+    { name: "Mercedes-Benz AMG", text: "Rent Price: $720/day", logo: "https://www.prestigehire.co/wp-content/uploads/2026/04/image-42-3-1.png", carImage: "https://www.prestigehire.co/wp-content/uploads/2026/04/image-36-1-1.png" },
+    { name: "Maserati GranTurismo", text: "Rent Price: $720/day", logo: "https://tse1.mm.bing.net/th/id/OIP.oRi7jfpl8FPiLzYIb5XUtAHaEY?pid=Api&h=220&P=0", carImage: "https://www.prestigehire.co/wp-content/uploads/2026/04/image-31-1.png" },
   ],
-  fleetHeading: "Our Formal Car Fleet",
+  fleetHeading:{highlight: "Private Jets", 
+  rest: "Our Fleet of"},
   fleetSubheading: "Turn heads with our luxury cars designed to make your formal night unforgettable:",
   typesSection: {
-    title: "School Formal Car Hire — Arrive With Style",
+    title: {
+    rest: "Types of",
+    highlight: "Private Jet Charter Sydney",
+  },
     description: "A school formal is a night to remember, and your arrival sets the tone. Our school formal car hire lets you travel like a star without worrying about traffic or parking.",
     items: [
       "Luxury cars to match your outfit and theme",
@@ -95,9 +69,7 @@ export const formalCarHire: ServiceData = {
   },
   whyChoose: {
     title: "Why Choose Prestige Hire",
-    paragraphs: [
-      "From your doorstep to the venue, we make sure every ride feels smooth and enjoyable."
-    ],
+    paragraphs: ["From your doorstep to the venue, we make sure every ride feels smooth and enjoyable."],
     bullets: [
       "Trusted Sydney brand for luxury transport",
       "Licensed, experienced chauffeurs",
@@ -105,10 +77,8 @@ export const formalCarHire: ServiceData = {
       "3-hour and custom hire packages",
       "Add-on options like private chauffeurs or yacht hire in Sydney for after-party celebrations"
     ],
-    closing:"From your doorstep to the venue, we make sure every ride feels smooth and enjoyable.",
-    images: [
-      "https://www.prestigehire.co/wp-content/uploads/2026/04/about-img.jpg"
-    ]
+    closing: "From your doorstep to the venue, we make sure every ride feels smooth and enjoyable.",
+    images: ["https://www.prestigehire.co/wp-content/uploads/2026/04/about-img.jpg"]
   },
   formSection: {
     title: "Get Free Quote for Your Formal Cars",

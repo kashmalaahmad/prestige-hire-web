@@ -87,7 +87,7 @@ export function Hero({
   if (isDefaultHero) {
     return (
       <>
-        <section className={`relative min-h-[400px] md:min-h-[700px] w-full flex flex-col justify-start overflow-visible ${isBoxed ? "max-w-6xl mx-auto rounded-2xl mt-8" : ""}`}>
+        <section className={`relative min-h-[400px] md:min-h-[700px] w-full flex flex-col justify-start  ${isBoxed ? "max-w-6xl mx-auto rounded-2xl mt-8" : ""}`}>
           <div className="absolute inset-0 z-0">
             <Image src={heroBackgroundImage} alt="Hero background" fill  className={`object-cover ${isBoxed ? "rounded-2xl" : ""}`} priority />
           </div>

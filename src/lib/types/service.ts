@@ -1,36 +1,23 @@
-// src/lib/types/service.ts
-
-export type SectionKey =
-  | "hero"
-  | "about"
-  | "whyChoose"
-  | "fleet"
-  | "typesSection"
-  | "bookingSection"
-  | "routesSection"
-  | "ctaSection"
-  | "formSection"
-  | "featuresSection"
-  | "faqSection";
+export type SectionKey = 
+  | "hero" 
+  | "about" 
+  | "whyChoose" 
+  | "fleet" 
+  | "bookingSection" 
+  | "formSection";
 
 export interface ServiceData {
-  layout: SectionKey[];
-
+  layout: string[]; // Keep as string[] for flexibility or use SectionKey[]
   hero: {
     heroImage: string;
     heroTitle: string;
-    heroLayout?: "full" | "boxed";
+    heroLayout?:string;
   };
-
   about: { 
-    heading: { 
-      highlight: string; 
-      rest: string 
-    }; 
+    heading: { highlight: string; rest: string }; 
     text: string; 
-    image: string 
+    image: string;
   };
-
   whyChoose: {
     title: string;
     paragraphs?: string[];
@@ -38,56 +25,12 @@ export interface ServiceData {
     closing: string;
     images: string[];
   };
-
-  fleet?: { name: string; text: string; image?: string; logo?: string; carImage?: string; price?: string }[];
-  fleetHeading?: string;
-  fleetSubheading?: string;
-
-  typesSection?: {
-    title: { highlight: string; rest: string };
-    description: string;
-    items: string[];
-    footerText?: string;
-    image?: string;
+  fleet?: Array<{ name: string; text: string; image: string }>;
+  bookingSection?: { 
+    title: { highlight: string; rest: string }; 
+    subtitle: string; 
+    steps: string[]; 
+    footerText: string 
   };
-
-  bookingSection?: {
-    title: string;
-    subtitle: string;
-    steps: string[];
-    footerText: string;
-  };
-
-  routesSection?: {
-  title: { highlight: string; rest: string };
-  description: string;
-  routes?: string[];
-  footerText?: string;
-  mainImage: string;
-  galleryImages?: string[];
-};
-  ctaSection?: {
-    title: string;
-    paragraphs: string[];
-    buttonText: string;
-    buttonLink: string;
-    image: string;
-  };
-
   formSection?: { title: string; subtitle: string };
-
-  featuresSection?: {
-    title: string;
-    description?: string;
-    items: string[];
-    footerText?: string;
-    mainImage?: string;
-    galleryImages?: string[];
-  };
-
-
-  faqSection?: {
-    title: string;
-    description?: string;
-  };
 }
