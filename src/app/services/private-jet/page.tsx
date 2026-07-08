@@ -116,7 +116,7 @@ export default function PrivateJetPage() {
                 className="p-2 bg-white rounded-2xl shadow-sm hover:shadow-lg transition-shadow flex flex-col"
               >
                 <div className="relative h-56 sm:h-64 w-full overflow-hidden rounded-xl">
-                  <Image src={item.image} alt={item.name} fill className="object-cover" />
+                  <Image src={item.image || "/placeholder-image.jpg"} alt={item.name} fill className="object-cover" />
                 </div>
                 <div className="p-4 flex flex-col flex-grow">
                   <h3
@@ -249,7 +249,7 @@ export default function PrivateJetPage() {
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
             <div className="space-y-4">
               <Image
-                src={data.featuresSection.mainImage}
+                src={data.featuresSection.mainImage || "/placeholder-image.jpg"}
                 width={588}
                 height={401}
                 alt={data.featuresSection.title}

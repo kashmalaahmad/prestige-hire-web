@@ -82,7 +82,7 @@ export interface ServiceData {
     items: string[];
     footerText?: string;
     mainImage?: string;
-    galleryImages: string[];
+    galleryImages?: string[];
   };
 
 
