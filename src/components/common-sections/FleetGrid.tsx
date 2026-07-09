@@ -12,7 +12,7 @@ interface FleetItem {
 
 interface FleetGridProps {
   data: FleetItem[];
-  heading: { highlight: string; rest: string };
+  heading: { highlight: string; rest: string; end?: string };
   subheading: string;
   showPrice?: boolean;
 }
@@ -32,7 +32,7 @@ function FleetCard({ item, showPrice }: { item: FleetItem; showPrice?: boolean }
       {/* Top Section */}
       <div className="absolute top-0 left-0 p-4 sm:p-6">
         <div className="relative w-[32px] h-[32px] sm:w-[42px] sm:h-[42px] mb-2">
-          <Image src={item.carImage || "/placeholder.jpg"} alt="Brand Logo" fill className="object-contain" />
+          <Image src={item.logo || "/placeholder.jpg"} alt="Brand Logo" fill className="object-contain" />
         </div>
         <h3 
           className="text-white text-[16px] sm:text-[19px] font-semibold tracking-wide font-serif leading-tight" 
@@ -55,8 +55,12 @@ function FleetCard({ item, showPrice }: { item: FleetItem; showPrice?: boolean }
 }
 
 export function FleetGrid({ data, heading, subheading, showPrice = false }: FleetGridProps) {
+  if (!data || !heading) {
+    return null;
+  }
   const scrollRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+
 
   const handleScroll = () => {
     const el = scrollRef.current;
@@ -76,25 +80,26 @@ export function FleetGrid({ data, heading, subheading, showPrice = false }: Flee
       <div className="container-default">
         <div className="text-center mb-8 sm:mb-10 px-4">
           <h2
-            className="text-[28px] xs:text-[32px] sm:text-[36px] md:text-[42px] font-bold mb-2 sm:mb-3"
+            className="text-[28px] xs:text-[32px] sm:text-[36px] md:text-[55px] font-bold mb-2 sm:mb-3"
             style={{ fontFamily: '"Playfair Display", serif', color: "#000000" }}
           >
-            {heading.rest} <span className="text-[#C69E65]">{heading.highlight}</span>
+            <span className="text-[#C69E65] mx-2 ">{heading.highlight}</span> 
+            {heading.end || ""}
           </h2>
-          <p className="text-[14px] sm:text-[16px] text-[#23282D]">
+          <p className="text-[14px] sm:text-[16px] text-[#23282D] text-center" style={{ fontFamily: "Poppins, sans-serif" }}>
             {subheading}
           </p>
         </div>
 
         {/* Mobile carousel */}
         <div className="sm:hidden">
-          <div
-            ref={scrollRef}
-            onScroll={handleScroll}
-            className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth gap-4 -mx-4 px-4 pb-1 [&::-webkit-scrollbar]:hidden"
-            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-          >
-            {data.map((item, index) => (
+          <div className="hidden sm:grid gap-6 justify-items-center" 
+             style={{ 
+               gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+               maxWidth: "1200px",
+               margin: "0 auto"
+             }}>
+            {data?.map((item, index) => (
               <div key={index} className="relative shrink-0 snap-center w-[88%]" style={{ aspectRatio: "360 / 220" }}>
                 <FleetCard item={item} showPrice={showPrice} />
               </div>

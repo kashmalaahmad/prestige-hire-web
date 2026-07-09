@@ -33,6 +33,8 @@ export interface ServiceData {
     logo?: string; 
     carImage?: string; 
   }>;
+  fleetHeading?: { highlight: string; rest: string };
+  fleetSubheading?: string;
   bookingSection?: { 
     title: { highlight: string; rest: string }; 
     subtitle: string; 

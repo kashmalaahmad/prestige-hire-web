@@ -1,19 +1,26 @@
-import { Hero } from "@/components/sections/Hero";
-import { FleetGrid } from "@/components/sections/FleetGrid";
-import { About } from "@/components/sections/About";
-import { ServiceHighlight } from "@/components/sections/ServiceHighlight";
-import { YachtGrid } from "@/components/sections/YachtGrid";
-import { JetGrid } from "@/components/sections/JetGrid";
-import { ContactForm } from "@/components/sections/ContactForm"
-import { Testimonials } from "@/components/sections/Testimonials";
-import { ServicesGrid } from "@/components/sections/ServicesGrid";
-import { CallToAction } from "@/components/sections/CallToAction";
-import { FAQ } from "@/components/sections/FAQ";
+import { Hero } from "@/components/common-sections/Hero";
+import { FleetGrid } from "@/components/common-sections/FleetGrid";
+import { About } from "@/components/home/About";
+import { ServiceHighlight } from "@/components/home/ServiceHighlight";
+import { YachtGrid } from "@/components/home/YachtGrid";
+import { JetGrid } from "@/components/home/JetGrid";
+import { ContactForm } from "@/components/common-sections/ContactForm"
+import { Testimonials } from "@/components/common-sections/Testimonials";
+import { ServicesGrid } from "@/components/home/ServicesGrid";
+import { CallToAction } from "@/components/home/CallToAction";
+import { FAQ } from "@/components/common-sections/FAQ";
+import { fleetData } from "@/lib/data";
 export default function Home() {
   return (
     <main>
       <Hero />
-      <FleetGrid />
+      <FleetGrid 
+            data={fleetData} 
+            heading={{ highlight: "Premium Fleet", rest: "Our" }} 
+            subheading="Ideal for weddings, events and VIP transport across Sydney."
+            showPrice={false} 
+          />
+      
       <About />
       <ServiceHighlight 
         highlight="Wedding Car Hire"

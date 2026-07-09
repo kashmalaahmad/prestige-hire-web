@@ -13,13 +13,12 @@ interface AboutSectionProps {
 export default function AboutSection({ data, items, maxWidth = "max-w-7xl" }: AboutSectionProps) {
   return (
     <section className={`${maxWidth} mx-auto py-10 md:py-16 px-4`}>
-      {/* Existing Text/Image Layout */}
       <div className="grid sm:grid-cols-2 gap-10 items-center mb-16">
         <div>
-          <h1 className="text-black font-bold text-[32px] sm:text-[40px] md:text-[50px] mb-6" style={{ fontFamily: '"Playfair Display", serif' }}>
+          <h1 className="text-black font-bold text-[32px] sm:text-[40px] md:text-[55px] mb-6" style={{ fontFamily: '"Playfair Display", serif' }}>
             <span className="text-[#C69E65]">{data.heading.highlight}</span> {data.heading.rest}
           </h1>
-          <p className="text-gray-700 leading-relaxed" style={{ fontFamily: "Poppins, sans-serif", fontSize: "16px" }}>
+          <p className="text-black leading-relaxed" style={{ fontFamily: "Poppins, sans-serif", fontSize: "16px" }}>
             {data.text}
           </p>
         </div>

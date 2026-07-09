@@ -1,11 +1,11 @@
 "use client";
 
-import { Hero } from "@/components/sections/Hero";
-import { FleetGrid } from "@/components/sections/FleetGrid";
-import { Testimonials } from "@/components/sections/Testimonials";
-import { ContactForm } from "@/components/sections/ContactForm";
-import { ServicesGrid } from "@/components/sections/ServicesGrid";
-import { FaqSection } from "@/components/sections/FaqSection";
+import { Hero } from "@/components/common-sections/Hero";
+import { FleetGrid } from "@/components/common-sections/FleetGrid";
+import { Testimonials } from "@/components/common-sections/Testimonials";
+import { ContactForm } from "@/components/common-sections/ContactForm";
+import { ServicesGrid } from "@/components/home/ServicesGrid";
+import { FaqSection } from "@/components/common-sections/FaqSection";
 import { weddingHireData } from "@/lib/data";
 import { fleetData } from "@/lib/data";
 import Image from "next/image";

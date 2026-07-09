@@ -1,13 +1,6 @@
 import type { ServiceData } from "@/lib/types/service";
 
 export interface FormalCarServiceData extends ServiceData {
-  ctaSection: {
-    title: string;
-    paragraphs: string[];
-    buttonText: string;
-    buttonLink: string;
-    image: string;
-  };
   fleetHeading: { highlight: string; rest: string };
   fleetSubheading: string;
   typesSection: {
@@ -24,9 +17,7 @@ export const formalCarHire: FormalCarServiceData = {
     "hero",
     "about",
     "fleet",
-    "typesSection",
     "bookingSection",
-    "ctaSection",
     "whyChoose",
     "formSection",
     "faqSection",
@@ -50,9 +41,10 @@ export const formalCarHire: FormalCarServiceData = {
   ],
   fleetHeading: { highlight: "Car Fleet", rest: "Our Formal" },
   fleetSubheading: "Turn heads with our luxury cars designed to make your formal night unforgettable:",
+  
   typesSection: {
-    title: { highlight: "Formal Car", rest: "Services" },
-    description: "A school formal is a night to remember, and your arrival sets the tone. Our school formal car hire lets you travel like a star without worrying about traffic or parking.",
+    title: { highlight: "", rest: "School Formal Car Hire — Arrive With Style" },
+    description: "A school formal is a night to remember, and your arrival sets the tone. Our school formal car hire lets you travel like a star without worrying about traffic or parking. What you get with Prestige Hire:",
     items: [
       "Luxury cars to match your outfit and theme",
       "Professional chauffeurs for reliable service",
@@ -71,16 +63,6 @@ export const formalCarHire: FormalCarServiceData = {
       "Celebrate – Arrive on time, take photos and enjoy the evening stress-free.",
     ],
     footerText: "Need help picking the right car? Contact us anytime through our contact page.",
-  },
-  ctaSection: {
-    title: "Year 12 Formal Car Hire — Make It Count",
-    paragraphs: [
-      "Finishing school calls for something special, and your formal night should feel just as memorable. With our Year 12 formal car hire in Sydney, you get a stylish chauffeur-driven experience from home pickup to your red-carpet arrival.",
-      "We handle the timing, photo stops, and routes so you can simply enjoy the moment. Travel solo or with your friends, play your music, and arrive relaxed and ready for the night ahead. It’s more than a ride, it’s part of the celebration.",
-    ],
-    buttonText: "Get Free Quote",
-    buttonLink: "#",
-    image: "https://www.prestigehire.co/wp-content/uploads/2026/04/new-gallery16.png",
   },
   whyChoose: {
     title: "Why Choose Prestige Hire",
@@ -103,4 +85,14 @@ export const formalCarHire: FormalCarServiceData = {
     title: "Frequently Asked Questions",
     description: "Still have questions? Find answers to our most commonly asked questions.",
   },
+};
+export const year12Formal = {
+  title: { 
+    rest: "Year 12 ", 
+    highlight: "Formal Car Hire", 
+    end: " — Make It Count" 
+  },
+  description: "Finishing school calls for something special, and your formal night should feel just as memorable. With our Year 12 formal car hire in Sydney, you get a stylish chauffeur-driven experience from home pickup to your red-carpet arrival.",
+  subDescription: "We handle the timing, photo stops, and routes so you can simply enjoy the moment. Travel solo or with your friends, play your music, and arrive relaxed and ready for the night ahead. It’s more than a ride, it’s part of the celebration.",
+  image: "https://www.prestigehire.co/wp-content/uploads/2026/04/new-gallery16.png",
 };

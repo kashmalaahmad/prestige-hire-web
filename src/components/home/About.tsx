@@ -13,7 +13,6 @@ export function About() {
   return (
     <section className="section-padding bg-[#FBF7F5]">
       <div className="container-default">
-        {/* Section Heading */}
         <div className="text-center mb-12">
           <h2
             className="text-[42px] md:text-[55px] font-bold leading-tight"

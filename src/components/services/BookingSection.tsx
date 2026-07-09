@@ -43,9 +43,12 @@ export const BookingSection = ({
         )}
         </h2>
 
-        <p className="mb-4 text-[16px] text-black text-center " style={{ fontFamily: 'Poppins, sans-serif' }}>
-          {subtitle}
-        </p>
+       <p 
+  className="mb-4 text-[16px] text-black text-center mx-auto max-w-3xl" 
+  style={{ fontFamily: '"Poppins", sans-serif' }}
+>
+  {subtitle}
+</p>
 
         <div className="flex flex-wrap justify-center gap-x-10 gap-y-2 mb-4">
           {steps.map((step, i) => (

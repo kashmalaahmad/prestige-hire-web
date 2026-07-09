@@ -8,7 +8,6 @@ export function Contact() {
   const [status, setStatus] = useState<{ type: "success" | "error" | null, msg: string }>({ type: null, msg: "" });
   const [isPending, setIsPending] = useState(false);
 
-  // You can replace this URL with your own API endpoint or a service like Formspree
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setIsPending(true);
@@ -17,7 +16,6 @@ export function Contact() {
     const formData = new FormData(e.currentTarget);
     
     try {
-      // Example: Using Formspree (replace with your own endpoint)
       const response = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
         method: "POST",
         body: formData,

@@ -24,8 +24,8 @@ export function Header() {
           <div className="hidden lg:block w-[100px]"></div>
 
           <ul
-            className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-[11px] xs:text-[12px] sm:text-[14px] lg:text-[16px] -mx-1 lg:-mx-2"
-            style={{ color: "#595959", fontFamily: "Inter, sans-serif" }}
+            className="flex flex-wrap items-center justify-center gap-x-3 text-black gap-y-1 text-[11px] xs:text-[12px] sm:text-[14px] lg:text-[16px] -mx-1 lg:-mx-2"
+            style={{ fontFamily: "Inter, sans-serif" }}
           >
             <li className="flex items-center px-1 lg:px-2">
               <FaMapMarkerAlt size={12} className="mr-1.5 lg:mr-2 shrink-0" aria-hidden="true" style={{ color: "#595959" }} />
@@ -96,11 +96,12 @@ export function Header() {
                 onMouseLeave={() => link.dropdown && setActiveDropdown(null)}
               >
                 <Link
-                  href={link.href}
-                  className={`flex items-center gap-1 text-[16px] font-normal p-3 rounded transition-colors ${
-                    isActive ? "text-[#999999]" : "text-[#23282D] hover:text-[#999999]"
-                  }`}
-                >
+  href={link.href}
+  className={`flex items-center gap-1 text-[16px] font-normal p-3 rounded transition-colors ${
+    isActive ? "text-[#999999]" : "text-[#23282D] hover:text-[#999999]"
+  }`}
+  style={{ fontFamily: "Inter, sans-serif" }}
+>
                   {link.name}
                   {link.dropdown && <ChevronDown size={14} />}
                 </Link>

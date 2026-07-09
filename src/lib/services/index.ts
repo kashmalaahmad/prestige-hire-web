@@ -5,8 +5,7 @@ import { yacht } from "./yacht";
 import { formalCarHire } from "./formal-car-hire";
 import { Chauffeur } from "./chauffeur";
 import { luxuryCarHire } from "./luxury-car-hire";
-import { stretchLimousine } from "./stretch-limousine";
-import { sydneyAirportTransfers } from "./airport-transfers";
+
 
 export const servicesPageData: Record<string, ServiceData> = {
   "private-jet": privateJet,
@@ -14,6 +13,4 @@ export const servicesPageData: Record<string, ServiceData> = {
   "formal-car-hire": formalCarHire,
   "chauffeur": Chauffeur,
   "luxury-car-hire": luxuryCarHire,
-  "stretch-limousine": stretchLimousine,
-  "airport-transfers": sydneyAirportTransfers,
 };
